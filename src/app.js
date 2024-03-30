@@ -24,14 +24,14 @@ async function sendEmails() {
     to_name: name,
     to_email: email
   });
-  console.long(result);
+  console.log(result);
 
   const result2 = await emailjs.send("service_qyizc2s", "template_tiixzwa", {
     from_name: name,
     from_email: email,
     message: message
   });
-  console.long(result2);
+  console.log(result2);
 
   document.querySelector("#name-input").value = "";
   document.querySelector("#email-input").value = "";
