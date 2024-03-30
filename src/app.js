@@ -15,19 +15,25 @@ window.onload = function() {
   button.addEventListener("click", sendEmails);
 };
 
-function sendEmails() {
+async function sendEmails() {
   const name = document.querySelector("#name-input").value;
   const email = document.querySelector("#email-input").value;
   const message = document.querySelector("#message-input").value;
 
-  emailjs.send("service_qyizc2s", "template_68nimpt", {
+  const result = await emailjs.send("service_qyizc2s", "template_68nimpt", {
     to_name: name,
     to_email: email
   });
+  console.long(result);
 
-  emailjs.send("service_qyizc2s", "template_tiixzwa", {
+  const result2 = await emailjs.send("service_qyizc2s", "template_tiixzwa", {
     from_name: name,
     from_email: email,
     message: message
   });
+  console.long(result2);
+
+  document.querySelector("#name-input").value = "";
+  document.querySelector("#email-input").value = "";
+  document.querySelector("#message-input").value = "";
 }
