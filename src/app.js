@@ -16,5 +16,7 @@ window.onload = function() {
 };
 
 function sendEmails() {
-  alert("sending emails");
+  const name = document.querySelector("#name-input").value;
+  const email = document.querySelector("#email-input").value;
+  const message = document.querySelector("#message-input").value;
 }
